@@ -1,12 +1,14 @@
 angular.module('TDApp', [])
   .service('TodoController', function () {
     var kero = this
-    kero.myTexts = [{mytext:''}]
+    kero.myTexts = []
     kero.list = function () {
       return kero.myTexts
     }
-    kero.add = function(contact) {
-      return kero.myTexts.push(contact)
+    kero.add = function(word) {
+      if(word.mytext !== null){
+      return kero.myTexts.push(word)
+    }
     }
   })
   .controller('ListData', function ($scope, TodoController) {
@@ -23,6 +25,6 @@ angular.module('TDApp', [])
         mytext: $scope.mytext
       }
       TodoController.add(word)
-      $scope.mytext = ''
+      $scope.mytext = null
     }
   })

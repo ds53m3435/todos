@@ -16,15 +16,15 @@
 
       <div class="container">
         <div ng-controller="ListData">
-          <table class="table table-hover">
+          <table class="table table-hover"  style="width: 80%">
             <thead>
-              <th></th>
-              <th>Text</th>
-              <th>Done</th>
+              <th style="width:10%"></th>
+              <th style="width:30%">Text</th>
+              <th style="width:20%">Done</th>
             </thead>
             <tbody>
                 <tr ng-repeat="text in myTexts" ng-controller="CheckBox">
-                  <td><input style="hide:true;" type="checkbox" ng-model="Check.check" ng-true-value="'Complete'" ng-false-value=''></td>
+                  <td><input style="" type="checkbox" ng-model="Check.check" ng-true-value="'Complete'" ng-false-value=''></td>
                   <td>{{text.mytext}}</td>
                   <td>{{Check.check}}</td>
                 </tr>
