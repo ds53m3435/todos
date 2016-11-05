@@ -7,16 +7,20 @@
   </head>
   <body>
     <div ng-controller="AddmyTexts">
-      <div class="container"> <center>
-        <h1 style="text-align:center ;color: rgba(175, 46, 47, 0.15);font-size: 100px">todos</h1>
-        <input style="padding:15px 15px 15px 15px; width: 40%" type="text" name="name" placeholder="What needs to be done?" ng-model="mytext" >
-          <button class="btn btn-primary" ng-click="save()">Add</button></center>   
+      <div class="container">
+        <div class="col-md-12">
+          <center>
+          <h1 style="text-align:center ;color: rgba(175, 46, 47, 0.15);font-size: 100px">todos</h1>
+          <input style="padding:15px 15px 15px 15px; width:40%;" type="text" name="name" placeholder="What needs to be done?" ng-model="mytext" >
+          <button class="btn btn-primary" ng-click="save()">Add</button>
+          </center>
+        </div>
       </div>
     </div>
 
       <div class="container">
         <div ng-controller="ListData">
-          <table class="table table-hover"  style="width: 80%">
+          <table class="table table-hover">
             <thead>
               <th style="width:10%"></th>
               <th style="width:30%">Text</th>

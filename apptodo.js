@@ -6,8 +6,8 @@ angular.module('TDApp', [])
       return kero.myTexts
     }
     kero.add = function(word) {
-      if(word.mytext !== null){
-      return kero.myTexts.push(word)
+      if(word.mytext !== null && word.mytext != ''){
+        return kero.myTexts.push(word)
     }
     }
   })
@@ -15,15 +15,11 @@ angular.module('TDApp', [])
      $scope.myTexts = TodoController.list()
   })
   .controller('CheckBox', function ($scope) {
-    $scope.Check = {
-      check : ''
-    }
+    $scope.Check = { check : '' }
   })
   .controller('AddmyTexts', function($scope, TodoController) {
     $scope.save = function() {
-      var word = {
-        mytext: $scope.mytext
-      }
+      var word = { mytext: $scope.mytext }
       TodoController.add(word)
       $scope.mytext = null
     }
