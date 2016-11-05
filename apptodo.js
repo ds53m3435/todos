@@ -8,7 +8,7 @@ angular.module('TDApp', [])
     kero.add = function(word) {
       if(word.mytext !== null && word.mytext != ''){
         return kero.myTexts.push(word)
-    }
+      }
     }
   })
   .controller('ListData', function ($scope, TodoController) {
