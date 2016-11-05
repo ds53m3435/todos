@@ -3,10 +3,10 @@ angular.module('TDApp', [])
     var kero = this
     kero.myTexts = []
     kero.list = function () {
-      return kero.myTexts
+        return kero.myTexts
     }
     kero.add = function(word) {
-      if(word.mytext !== null && word.mytext != ''){
+      if(word.mytext != null && word.mytext != ''){
         return kero.myTexts.push(word)
       }
     }

@@ -12,7 +12,7 @@
           <center>
           <h1 style="text-align:center ;color: rgba(175, 46, 47, 0.15);font-size: 100px">todos</h1>
         <form ng-submit="save()">
-          <input style="padding:15px 15px 15px 15px; width:40%;" type="text" name="name" placeholder="What needs to be done?" ng-model="mytext" >
+          <input style="padding:15px 15px 15px 15px; width:40%;" type="text" name="name" placeholder="What needs to be done?" ng-model="mytext" required>
           <button type="submit" class="btn btn-primary" style="width:70px; height:54px">Add</button>
         </form>
           </center>
@@ -30,7 +30,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="text in myTexts" ng-controller="CheckBox">
-                  <td><input style="" type="checkbox" ng-model="Check.check" ng-true-value="'Complete'" ng-false-value=''></td>
+                  <td><input type="checkbox" ng-model="Check.check" ng-true-value="'Complete'" ng-false-value=''></td>
                   <td>{{text.mytext}}</td>
                   <td>{{Check.check}}</td>
                 </tr>
