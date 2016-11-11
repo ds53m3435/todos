@@ -1,26 +1,26 @@
 angular.module('TDApp', [])
-  .service('TodoController', function () {
-    var kero = this
-    kero.myTexts = []
-    kero.list = function () {
-        return kero.myTexts
+  .service('TodoService', function () {
+    var text = this
+    text.myTexts = []
+    text.list = function () {
+        return text.myTexts
     }
-    kero.add = function(word) {
+    text.add = function(word) {
       if(word.mytext != null && word.mytext != ''){
-        return kero.myTexts.push(word)
+        return text.myTexts.push(word)
       }
     }
   })
-  .controller('ListData', function ($scope, TodoController) {
-     $scope.myTexts = TodoController.list()
+  .controller('ListData', function ($scope, TodoService) {
+     $scope.myTexts = TodoService.list()
   })
   .controller('CheckBox', function ($scope) {
     $scope.Check = { check : '' }
   })
-  .controller('AddmyTexts', function($scope, TodoController) {
+  .controller('AddmyTexts', function($scope, TodoService) {
     $scope.save = function() {
       var word = { mytext: $scope.mytext }
-      TodoController.add(word)
+      TodoService.add(word)
       $scope.mytext = null
     }
   })
