@@ -24,13 +24,13 @@ angular.module('TDApp', [])
      $scope.titles = TodoService.list()
   })
   .controller('CheckBox', function ($scope,TodoService) {
-    $scope.ch = function(ch){
-      if(ch === true)
-        return 'Complete'
-      else 
-        return ''
-    }
-  })
+    $scope.checktf = function(ch){
+      if(ch.done == true)
+        ch.done = false;
+      else
+        ch.done = true 
+      }
+    })
   .controller('AddmyTexts', function($scope, TodoService) {
     $scope.save = function() {
       var word = { title: $scope.title ,done : false}

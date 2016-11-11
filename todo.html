@@ -29,9 +29,9 @@
             </thead>
             <tbody>
                 <tr ng-repeat="text in titles" ng-controller="CheckBox">
-                  <td><input type="checkbox" ng-model="done"></td>
+                  <td><input type="checkbox" ng-model="done" ng-checked="text.done" ng-click='checktf(text)'> </td>
                   <td>{{text.title}}</td>
-                  <td ><div ng-if="text.done">Complete</div> </td>
+                  <td ><div ng-if="text.done">Complete</div></td>
                 </tr>
             </tbody>
           </table>
