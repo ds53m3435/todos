@@ -6,13 +6,14 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div ng-controller="AddmyTexts">
+    <div ng-controller="AddTextsController">
       <div class="container">
         <div class="col-md-12">
           <center>
           <h1 style="text-align:center ;color: rgba(175, 46, 47, 0.15);font-size: 100px">todos</h1>
         <form ng-submit="save()">
-          <input style="padding:15px 15px 15px 15px; width:40%;" type="text" name="name" placeholder="What needs to be done?" ng-model="title">
+            <input style="padding:15px 15px 15px 15px; width:40%;" type="text" name="name"
+            placeholder="What needs to be done?" ng-model="title">
           <button type="submit" class="btn btn-primary" style="width:70px; height:54px">Add</button>
         </form>
           </center>
@@ -20,15 +21,15 @@
       </div>
     </div>
       <div class="container">
-        <div ng-controller="ListData">
+        <div ng-controller="ShowListController">
           <table class="table table-hover">
             <thead>
               <th style="width:10%"></th>
-              <th style="width:30%">Text</th>
+              <th style="width:30%">Title</th>
               <th style="width:20%">Done</th>
             </thead>
             <tbody>
-                <tr ng-repeat="text in titles" ng-controller="CheckBox">
+                <tr ng-repeat="text in titles" ng-controller="CheckBoxController">
                   <td><input type="checkbox" ng-model="done" ng-checked="text.done" ng-click='checktf(text)'> </td>
                   <td>{{text.title}}</td>
                   <td ><div ng-if="text.done">Complete</div></td>
