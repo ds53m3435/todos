@@ -1,26 +1,40 @@
 angular.module('TDApp', [])
   .service('TodoService', function () {
     var text = this
-    text.myTexts = []
+    text.titles = [
+    {title : 'Kantapon',done : true},
+    {title : 'Surapong',done : false}
+    ]
     text.list = function () {
-        return text.myTexts
+        return text.titles
     }
     text.add = function(word) {
-      if(word.mytext != null && word.mytext != ''){
-        return text.myTexts.push(word)
+      if(word.title != null && word.title != ''){
+        return text.titles.push(word)
       }
+    }
+    text.ch = function(ch) {
+      if(ch == true)
+        return 'Complete'
+      else
+        return ''
     }
   })
   .controller('ListData', function ($scope, TodoService) {
-     $scope.myTexts = TodoService.list()
+     $scope.titles = TodoService.list()
   })
-  .controller('CheckBox', function ($scope) {
-    $scope.Check = { check : '' }
+  .controller('CheckBox', function ($scope,TodoService) {
+    $scope.ch = function(ch){
+      if(ch === true)
+        return 'Complete'
+      else 
+        return ''
+    }
   })
   .controller('AddmyTexts', function($scope, TodoService) {
     $scope.save = function() {
-      var word = { mytext: $scope.mytext }
+      var word = { title: $scope.title ,done : false}
       TodoService.add(word)
-      $scope.mytext = null
+      $scope.title = null
     }
   })
