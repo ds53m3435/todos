@@ -13,11 +13,11 @@ angular.module('TDApp', [])
         return text.titles.push(word)
       }
     }
-    text.ch = function() {
-      if(text.titles.done == true)
-        text.titles.done = false
+    text.ch = function(ch) {
+      if(ch.done == true)
+        ch.done = false;
       else
-        text.titles.done = true
+        ch.done = true
     }
   })
   .controller('ShowListController', function ($scope, TodoService) {
